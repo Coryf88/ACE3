@@ -27,16 +27,6 @@
 
 #define STABILIZED_MSG "The patient is stabilized."
 
-#define DEAD_MSGS [\
-    "Their time has expired.",\
-    "They are no longer with us",\
-    "Their time on this earth has expired",\
-    "They should be 6 foot under",\
-    "They have gone to meet their maker",\
-    "They are pushing up daisies",\
-    "They are an ex-soldier"\
-]
-
 #define CARDIAC_HEART_RATE 40
 #define REVIVE_HEART_RATE (40 + floor (random [10, 15, 20]))
 
@@ -89,20 +79,16 @@ if (_target getVariable [QGVAR(inReviveState), false]) exitWith {
 
     private _remainingReviveTime = GVAR(maxReviveTime) - (CBA_missionTime - _reviveStartTime);
     _timeleft = ((floor _remainingReviveTime) + (floor (random [_diagTimeAccuracy * -1, 0, _diagTimeAccuracy]))) max 1;
-    if (_remainingReviveTime > 0) then {
-        if !(_isMedic) then {
-            if (_timeleft < 60) then {
-                _reviveTimeMsg = REVIVE_TIME_LOW_NORMAL_MSG;
-            } else {
-                _timeleft = floor (_timeleft / 60);
-            };
+    if !(_isMedic) then {
+        if (_timeleft < 60) then {
+            _reviveTimeMsg = REVIVE_TIME_LOW_NORMAL_MSG;
         } else {
-            if (_timeleft <= 15) then {
-                _reviveTimeMsg = REVIVE_TIME_LOW_MEDIC_MSG;
-            };
+            _timeleft = floor (_timeleft / 60);
         };
     } else {
-        _reviveTimeMsg = selectRandom DEAD_MSGS;
+        if (_timeleft <= 15) then {
+            _reviveTimeMsg = REVIVE_TIME_LOW_MEDIC_MSG;
+        };
     };
 
     private _nameCaller = [_caller] call EFUNC(common,getName);
