@@ -20,7 +20,6 @@
 #include "script_component.hpp"
 
 params ["_caller", "_target", "_selectionName", "_className", "_items"];
-_cprondeadpatient = "CPR attempted on deceased patient.";
 
 if (alive _target && {(_target getVariable [QGVAR(inCardiacArrest), false] || _target getVariable [QGVAR(inReviveState), false])}) then {
     //[_target, "activity_view", LSTRING(Activity_cpr), [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
@@ -33,8 +32,8 @@ if (alive _target && {(_target getVariable [QGVAR(inCardiacArrest), false] || _t
 };
 
 if (!alive _target) then {
-    [_target, "activity", _cprondeadpatient, [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
-    [_target, "activity_view", _cprondeadpatient, [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
+    [_target, "activity", LSTRING(Activity_CPR_dead), [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
+    [_target, "activity_view", LSTRING(Activity_CPR_dead), [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
 };
 
 true;

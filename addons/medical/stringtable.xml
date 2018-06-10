@@ -5662,5 +5662,29 @@
         <Key ID="STR_ACE_Medical_DEFAction">
             <English>Readying the electrical discharge...</English>
         </Key>
+        <Key ID="STR_ACE_Medical_Activity_CPR_dead">
+            <English>CPR attempted on deceased patient.</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Activity_CPR_bleeding">
+            <English>Seems like %1's CPR pumped blood out of their wounds.</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Activity_CPR_revive_time">
+            <English>Looks like they'll die in about %1 minutes.</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Activity_CPR_revive_time_low">
+            <English>They'll be dead in less than a minute.</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Activity_CPR_bleeding_medic">
+            <English>%1's CPR further worsened the patient's hemorrhaging.</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Activity_CPR_revive_time_medic">
+            <English>%2 has an estimated %1 seconds until exsanguination.</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Activity_CPR_revive_time_low_medic">
+            <English>The patient is not going to make it.</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Activity_CPR_stabilized">
+            <English>The patient is stabilized.</English>
+        </Key>
     </Package>
 </Project>

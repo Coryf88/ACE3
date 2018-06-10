@@ -17,16 +17,6 @@
 
 #include "script_component.hpp"
 
-#define BLOOD_LOSS_MEDIC_MSG "%1's CPR further worsened the patient's hemorrhaging."
-#define REVIVE_TIME_MEDIC_MSG "%2 has an estimated %1 seconds until exsanguination."
-#define REVIVE_TIME_LOW_MEDIC_MSG "The patient is not going to make it."
-
-#define BLOOD_LOSS_NORMAL_MSG "Seems like %1's CPR pumped blood out of their wounds."
-#define REVIVE_TIME_NORMAL_MSG "Looks like they'll die in about %1 minutes."
-#define REVIVE_TIME_LOW_NORMAL_MSG "They'll be dead in less than a minute."
-
-#define STABILIZED_MSG "The patient is stabilized."
-
 #define CARDIAC_HEART_RATE 40
 #define REVIVE_HEART_RATE (40 + floor (random [10, 15, 20]))
 
@@ -51,8 +41,8 @@ if (_target getVariable [QGVAR(inReviveState), false]) exitWith {
     private _reviveStartTime = _target getVariable [QGVAR(reviveStartTime), 0];
 
     private _diagTimeAccuracy = NORMAL_ACCURACY;
-    private _bloodLossMsg = BLOOD_LOSS_NORMAL_MSG;
-    private _reviveTimeMsg = REVIVE_TIME_NORMAL_MSG;
+    private _bloodLossMsg = LSTRING(Activity_CPR_bleeding);
+    private _reviveTimeMsg = LSTRING(Activity_CPR_revive_time);
 
     private _medicClass = _caller getVariable [
         QGVAR(medicClass), // Var name
@@ -62,8 +52,8 @@ if (_target getVariable [QGVAR(inReviveState), false]) exitWith {
 
     if (_isMedic) then {
         _diagTimeAccuracy = if (_medicClass > 1) then { DOCTOR_ACCURACY } else { MEDIC_ACCURACY };
-        _bloodLossMsg = BLOOD_LOSS_MEDIC_MSG;
-        _reviveTimeMsg = REVIVE_TIME_MEDIC_MSG;
+        _bloodLossMsg = LSTRING(Activity_CPR_bleeding_medic);
+        _reviveTimeMsg = LSTRING(Activity_CPR_revive_time_medic);
     };
 
     private _stableCondition = [_target] call FUNC(isInStableCondition);
@@ -81,13 +71,13 @@ if (_target getVariable [QGVAR(inReviveState), false]) exitWith {
     _timeleft = ((floor _remainingReviveTime) + (floor (random [_diagTimeAccuracy * -1, 0, _diagTimeAccuracy]))) max 1;
     if !(_isMedic) then {
         if (_timeleft < 60) then {
-            _reviveTimeMsg = REVIVE_TIME_LOW_NORMAL_MSG;
+            _reviveTimeMsg = LSTRING(Activity_CPR_revive_time_low);
         } else {
             _timeleft = floor (_timeleft / 60);
         };
     } else {
         if (_timeleft <= 15) then {
-            _reviveTimeMsg = REVIVE_TIME_LOW_MEDIC_MSG;
+            _reviveTimeMsg = LSTRING(Activity_CPR_revive_time_low_medic);
         };
     };
 
@@ -97,7 +87,7 @@ if (_target getVariable [QGVAR(inReviveState), false]) exitWith {
         [_target, _reviveTimeMsg, [_timeleft, _nameTarget]] call _fnc_addToLog;
 
         if (_isMedic) then {
-            [_target, STABILIZED_MSG, []] call _fnc_addToLog;
+            [_target, LSTRING(Activity_CPR_stabilized), []] call _fnc_addToLog;
     };
 
         if ((random 1) > 0.8) then {
