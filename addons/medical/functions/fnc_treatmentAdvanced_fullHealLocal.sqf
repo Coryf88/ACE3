@@ -71,6 +71,11 @@ if (alive _target) exitWith {
     // Resetting damage
     _target setDamage 0;
 
+    if ([_target] call ace_medical_fnc_isInMedicalFacility || [_target] call ace_medical_fnc_isInMedicalVehicle) then {
+        [_target, "activity", "Wounds have been fully treated within the facility.", [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
+        _target setVariable[QGVAR(amountOfReviveLives), GVAR(amountOfReviveLives), true];
+    };
+
     [_target, "activity", LSTRING(Activity_fullHeal), [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
     [_target, "activity_view", LSTRING(Activity_fullHeal), [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog); // TODO expand message
 };

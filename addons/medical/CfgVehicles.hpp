@@ -876,6 +876,17 @@ class CfgVehicles {
             MACRO_ADDITEM(ACE_bodyBag,1);
         };
     };
+    class ACE_DefibrillatorItem: Item_Base_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = CSTRING(Defibrillator_Display);
+        author = ECSTRING(common,ACETeam);
+        model = "\A3\Structures_F_EPA\Items\Medical\Defibrillator_F.p3d";
+        vehicleClass = "Items";
+        class TransportItems {
+            MACRO_ADDITEM(ACE_Defibrillator,1);
+        };
+    };
 
     class ThingX;
     class ReammoBox_F: ThingX {
@@ -955,6 +966,7 @@ class CfgVehicles {
             MACRO_ADDITEM(ACE_quikClot,20);
             MACRO_ADDITEM(ACE_personalAidKit,3);
             MACRO_ADDITEM(ACE_surgicalKit,2);
+            MACRO_ADDITEM(ACE_Defibrillator,2);
             MACRO_ADDITEM(ACE_bodyBag,5);
         };
     };

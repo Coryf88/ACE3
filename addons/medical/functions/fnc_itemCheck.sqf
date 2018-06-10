@@ -35,6 +35,7 @@ while {({_x == "FirstAidKit"} count items _unit) > 0} do {
 while {({_x == "Medikit"} count items _unit) > 0} do {
     _unit removeItem "Medikit";
     if (GVAR(level) >= 2) then {
+        _unit addItemToBackpack "ACE_Defibrillator";
         _unit addItemToBackpack "ACE_fieldDressing";
         _unit addItemToBackpack "ACE_packingBandage";
         _unit addItemToBackpack "ACE_packingBandage";

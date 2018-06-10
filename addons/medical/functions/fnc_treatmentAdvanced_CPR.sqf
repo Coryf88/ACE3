@@ -1,5 +1,5 @@
 /*
- * Author: Glowbal
+ * Author: Glowbal, edited by BROMA
  * Callback for the CPR treatment action on success.
  *
  * Arguments:
@@ -20,9 +20,10 @@
 #include "script_component.hpp"
 
 params ["_caller", "_target", "_selectionName", "_className", "_items"];
+_cprondeadpatient = "CPR attempted on deceased patient.";
 
 if (alive _target && {(_target getVariable [QGVAR(inCardiacArrest), false] || _target getVariable [QGVAR(inReviveState), false])}) then {
-    [_target, "activity_view", LSTRING(Activity_cpr), [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
+    //[_target, "activity_view", LSTRING(Activity_cpr), [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
 
     if (local _target) then {
         [QGVAR(treatmentAdvanced_CPRLocal), [_caller, _target]] call CBA_fnc_localEvent;
@@ -30,4 +31,10 @@ if (alive _target && {(_target getVariable [QGVAR(inCardiacArrest), false] || _t
         [QGVAR(treatmentAdvanced_CPRLocal), [_caller, _target], _target] call CBA_fnc_targetEvent;
     };
 };
+
+if (!alive _target) then {
+    [_target, "activity", _cprondeadpatient, [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
+    [_target, "activity_view", _cprondeadpatient, [[_caller, false, true] call EFUNC(common,getName)]] call FUNC(addToLog);
+};
+
 true;

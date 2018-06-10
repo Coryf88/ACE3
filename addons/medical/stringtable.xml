@@ -5641,5 +5641,89 @@
         <Key ID="STR_ACE_Medical_MedicalSettings_enableOverdosing_Description">
             <English>Makes patient vulnerable to Morphine/Epinephrine/Atropine overdosing.</English>
         </Key>
+        <Key ID="STR_ACE_Medical_Defibrillator_Display">
+            <English>Defibrillator</English>
+            <Russian>Defibrillator</Russian>
+            <French>Defibrillator</French>
+            <Spanish>Defibrillator</Spanish>
+            <Polish>Defibrillator</Polish>
+            <German>Defibrillator</German>
+            <Hungarian>Defibrillator</Hungarian>
+            <Italian>Defibrillator</Italian>
+            <Portuguese>Defibrillator</Portuguese>
+            <Czech>Defibrillator</Czech>
+        </Key>
+        <Key ID="STR_ACE_Medical_Defibrillator_Desc_Short">
+            <English>Used to pass an electric current through the heart.</English>
+            <Russian>Used to pass an electric current through the heart.</Russian>
+            <Spanish>Used to pass an electric current through the heart.</Spanish>
+            <French>Used to pass an electric current through the heart.</French>
+            <Polish>Used to pass an electric current through the heart.</Polish>
+            <German>Used to pass an electric current through the heart.</German>
+            <Hungarian>Used to pass an electric current through the heart.</Hungarian>
+            <Italian>Used to pass an electric current through the heart.</Italian>
+            <Portuguese>Used to pass an electric current through the heart.</Portuguese>
+            <Czech>Used to pass an electric current through the heart.</Czech>
+        </Key>
+        <Key ID="STR_ACE_Medical_Defibrillator_Desc_Use">
+            <English>Defibrillators used to restart the heart.</English>
+            <Polish>Defibrillators used to restart the heart.</Polish>
+            <Russian>Defibrillators used to restart the heart.</Russian>
+            <German>Defibrillators used to restart the heart.</German>
+            <French>Defibrillators used to restart the heart.</French>
+            <Spanish>Defibrillators used to restart the heart.</Spanish>
+            <Hungarian>Defibrillators used to restart the heart.</Hungarian>
+            <Portuguese>Defibrillators used to restart the heart.</Portuguese>
+            <Czech>Defibrillators used to restart the heart.</Czech>
+            <Italian>Defibrillators used to restart the heart.</Italian>
+        </Key>
+        <Key ID="STR_ACE_Medical_Use_Defibrillator">
+            <English>Use Defibrillator</English>
+            <German>Use Defibrillator</German>
+            <Russian>Use Defibrillator</Russian>
+            <French>Use Defibrillator</French>
+            <Polish>Use Defibrillator</Polish>
+            <Spanish>Use Defibrillator</Spanish>
+            <Hungarian>Use Defibrillator</Hungarian>
+            <Portuguese>Use Defibrillator</Portuguese>
+            <Czech>Use Defibrillator</Czech>
+            <Italian>Use Defibrillator</Italian>
+        </Key>
+        <Key ID="STR_ACE_Medical_Activity_DEF_Good">
+            <English>%1 has successfully used a Defibrillator to reanimate the patient.</English>
+            <German>%1 has successfully used a Defibrillator to reanimate the patient.</German>
+            <Russian>%1 has successfully used a Defibrillator to reanimate the patient.</Russian>
+            <French>%1 has successfully used a Defibrillator to reanimate the patient.</French>
+            <Polish>%1 has successfully used a Defibrillator to reanimate the patient.</Polish>
+            <Spanish>%1 has successfully used a Defibrillator to reanimate the patient.</Spanish>
+            <Hungarian>%1 has successfully used a Defibrillator to reanimate the patient.</Hungarian>
+            <Portuguese>%1 has successfully used a Defibrillator to reanimate the patient.</Portuguese>
+            <Czech>%1 has successfully used a Defibrillator to reanimate the patient.</Czech>
+            <Italian>%1 has successfully used a Defibrillator to reanimate the patient.</Italian>
+        </Key>
+        <Key ID="STR_ACE_Medical_Activity_DEF_Bad">
+            <English>The patient did not respond to the countershock - try again.</English>
+            <German>The patient did not respond to the countershock - try again.</German>
+            <Hungarian>The patient did not respond to the countershock - try again.</Hungarian>
+            <Polish>The patient did not respond to the countershock - try again.</Polish>
+            <French>The patient did not respond to the countershock - try again.</French>
+            <Russian>The patient did not respond to the countershock - try again.</Russian>
+            <Spanish>The patient did not respond to the countershock - try again.</Spanish>
+            <Portuguese>The patient did not respond to the countershock - try again.</Portuguese>
+            <Czech>The patient did not respond to the countershock - try again.</Czech>
+            <Italian>The patient did not respond to the countershock - try again.</Italian>
+        </Key>
+        <Key ID="STR_ACE_Medical_DEFAction">
+            <English>Readying the electrical discharge...</English>
+            <German>Readying the electrical discharge...</German>
+            <Hungarian>Readying the electrical discharge...</Hungarian>
+            <Polish>Readying the electrical discharge...</Polish>
+            <French>Readying the electrical discharge...</French>
+            <Russian>Readying the electrical discharge...</Russian>
+            <Spanish>Readying the electrical discharge...</Spanish>
+            <Portuguese>Readying the electrical discharge...</Portuguese>
+            <Czech>Readying the electrical discharge...</Czech>
+            <Italian>Readying the electrical discharge...</Italian>
+        </Key>
     </Package>
 </Project>

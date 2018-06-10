@@ -81,6 +81,8 @@ PREP(treatmentAdvanced_bandage);
 PREP(treatmentAdvanced_bandageLocal);
 PREP(treatmentAdvanced_CPR);
 PREP(treatmentAdvanced_CPRLocal);
+PREP(treatmentAdvanced_DEF);
+PREP(treatmentAdvanced_DEFLocal);
 PREP(treatmentAdvanced_fullHeal);
 PREP(treatmentAdvanced_fullHealLocal);
 PREP(treatmentAdvanced_fullHealTreatmentTime);

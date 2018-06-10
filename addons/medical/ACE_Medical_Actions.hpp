@@ -182,6 +182,13 @@ class ACE_Torso {
         EXCEPTIONS
         icon = "";
     };
+    class Defibrillator: fieldDressing {
+        displayName = CSTRING(Use_Defibrillator);
+        condition = QUOTE([ARR_4(_player, _target, 'body', 'Defibrillator')] call DFUNC(canTreatCached));
+        statement = QUOTE([ARR_4(_player, _target, 'body', 'Defibrillator')] call DFUNC(treatment));
+        EXCEPTIONS
+        icon = PATHTOF(UI\icons\defibrillator.paa);
+    };
 };
 class ACE_ArmLeft {
     displayName = ECSTRING(interaction,ArmLeft);
